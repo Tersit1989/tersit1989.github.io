@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>С днем рождения! Наш Париж 2026 ❤️</title>
+  <title>С днём рождения! Наш Париж 2026 ❤️</title>
   <style>
     :root{
       --bg:#FDF5E6;          /* кремовый пергамент */
@@ -16,7 +16,9 @@
       --shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
       --radius: 12px;
     }
+
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -26,79 +28,200 @@
       background-image: radial-gradient(var(--border) 1px, transparent 1px);
       background-size: 20px 20px;
     }
-    header { padding: 40px 20px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+
+    header {
+      padding: 40px 20px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
     .birthday-pill {
-      display: inline-block; padding: 8px 20px; border: 2px solid var(--accent);
-      border-radius: 50px; font-weight: bold; color: var(--accent);
-      text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
-      margin-bottom: 15px; background: white;
+      display: inline-block;
+      padding: 8px 20px;
+      border: 2px solid var(--accent);
+      border-radius: 50px;
+      font-weight: bold;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 15px;
+      background: white;
     }
-    h1 { font-family: 'Georgia', serif; font-size: clamp(28px, 5vw, 42px); margin: 10px 0; }
-    main { max-width: 900px; margin: 0 auto; padding: 20px; display: grid; gap: 20px; }
-    @media (min-width: 800px) { .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; } }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 25px; margin-bottom: 20px; }
+
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      margin: 10px 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      gap: 20px;
+    }
+
+    @media (min-width: 800px) {
+      .grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 20px;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
     .day-header {
-      cursor: pointer; padding: 15px; background: white; border: 1px solid var(--border);
-      border-radius: var(--radius); margin-bottom: 10px; display: flex;
-      justify-content: space-between; align-items: center;
+      cursor: pointer;
+      padding: 15px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
     }
-    .item { border-left: 3px solid var(--accent); padding: 15px; margin: 15px 0; background: #fffcf9; border-radius: 0 8px 8px 0; }
+
+    .day-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .item {
+      border-left: 3px solid var(--accent);
+      padding: 15px;
+      margin: 15px 0;
+      background: #fffcf9;
+      border-radius: 0 8px 8px 0;
+    }
+
     .time { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
     .title { font-weight: 700; font-size: 1.1rem; display: block; margin: 5px 0; }
     .details { font-size: 0.95rem; color: var(--muted); }
+
     .btn {
-      display: inline-block; padding: 10px 18px; background: white; border: 1px solid var(--accent);
-      color: var(--text); text-decoration: none; border-radius: 8px; font-size: 13px; margin-top: 10px;
+      display: inline-block;
+      padding: 10px 18px;
+      background: white;
+      border: 1px solid var(--accent);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 10px;
     }
+
     .btn:hover { background: var(--accent); color: white; }
-    .note-box { background: var(--pink); padding: 15px; border-radius: 8px; font-size: 0.9rem; border-left: 4px solid #e1a7b1; margin-top: 10px; }
-    .transport-box { background: #e0f2f1; padding: 15px; border-radius: 8px; font-size: 0.9rem; border-left: 4px solid #1b6f6a; margin-top: 10px; }
-    .checklist { list-style: none; padding: 0; }
-    .checklist li { padding: 8px 0; border-bottom: 1px dotted var(--border); font-size: 0.9rem; }
-    #search { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; font-size: 16px; }
+
+    .note-box {
+      background: var(--pink);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      border-left: 4px solid #e1a7b1;
+      margin-top: 10px;
+    }
+
+    .transport-box {
+      background: #e0f2f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      border-left: 4px solid #1b6f6a;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .tips { list-style: none; padding: 0; margin: 0; }
+    .tips li { padding: 10px 0; border-bottom: 1px dotted var(--border); font-size: 0.95rem; }
+    .tips li:last-child { border-bottom: none; }
+    .tips strong { color: var(--text); }
+
+    #search {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pill-icons {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 18px;
+    }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="birthday-pill">Joyeux Anniversaire</div>
-  <h1>Париж: Твой День Рождения ❤️</h1>
+  <h1>Париж – подарок для тебя ❤️</h1>
   <p style="font-style: italic; color: var(--muted)">19 – 22 марта 2026</p>
+  <div class="pill-icons" aria-hidden="true">🌸 🗼 🥐 🍫 💐</div>
+  <p class="small" style="max-width: 70ch; margin: 12px auto 0;">Я спланировал всё так, чтобы было легко и красиво: без гонки – только Париж, вкусные моменты и ты.</p>
 </header>
 
 <main>
   <div class="grid">
     <section>
-      <input type="search" id="search" placeholder="Найти (например, 'ужин' или 'Эйфель')...">
+      <input type="search" id="search" placeholder="Найти (например, «ужин» или «Эйфель»)…">
       <div id="itinerary-container"></div>
     </section>
 
     <aside>
       <div class="card">
-        <h3 style="margin-top:0">🗼 Секрет сервиса</h3>
+        <h3 style="margin-top:0">🗼 Маленький парижский секрет</h3>
         <p class="note-box">
-          Первое правило Парижа: всегда говорите <strong>«Bonjour»</strong> при входе. Это кардинально меняет отношение персонала в лучшую сторону!
+          Первое правило Парижа: всегда говорите <strong>«Bonjour»</strong> при входе. Это часто реально меняет отношение персонала в лучшую сторону.
         </p>
       </div>
 
       <div class="card">
-        <h3>🚕 Транспорт и логистика</h3>
-        <p class="transport-box">
-          <strong>Такси:</strong> Пользуйтесь официальными такси. До аэропорта CDG действует <strong>фиксированный тариф</strong>. Убедитесь, что водитель принимает карты.
-        </p>
-        <p class="transport-box">
-          <strong>Метро:</strong> Линия 6 — самая красивая (она наземная и проходит мимо Эйфелевой башни).
-        </p>
+        <h3 style="margin-top:0">🚇 Транспорт – как сделать поездку лёгкой</h3>
+        <div class="transport-box">
+          <ul class="tips">
+            <li><strong>Метро:</strong> чаще всего быстрее такси. Линия <strong>6</strong> – одна из самых красивых (часть пути над землёй, вид на город).</li>
+            <li><strong>Такси:</strong> вызываем через консьержа/официальные сервисы. На <strong>CDG</strong> есть <strong>фиксированный тариф</strong> – уточняем заранее.</li>
+            <li><strong>С ребёнком:</strong> закладываем буфер 10–15 минут на входы, лифты и туалеты – без стресса.</li>
+            <li><strong>Пешком:</strong> Париж лучше всего «собирается» прогулками – между точками часто 10–20 минут.</li>
+            <li><strong>Оплата:</strong> на всякий случай держим 1 карту + немного наличных на мелочи (вода/булочная).</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
-        <h3>🎁 Чек-лист поездки</h3>
-        <ul class="checklist">
-          <li>✅ Шоколадная туфелька (забрать в День 1)</li>
-          <li>✅ Приложение FlashInvaders для игр в очереди</li>
-          <li>✅ Бронь в Terra (не забудьте попросить счет в конце)</li>
-          <li>✅ Удобная обувь (много пеших прогулок)</li>
-        </ul>
+        <h3 style="margin-top:0">📌 Логистика выезда</h3>
+        <div class="transport-box">
+          <ul class="tips">
+            <li><strong>В день вылёта:</strong> попросить консьержа вызвать <strong>официальное</strong> такси – не садиться к «частникам» у входа.</li>
+            <li><strong>Аэропорт CDG:</strong> выезжаем заранее, чтобы спокойно пройти контроль и купить перекус.</li>
+          </ul>
+        </div>
       </div>
     </aside>
   </div>
@@ -110,15 +233,15 @@ const ITIN = [
     day: "День 1", date: "19 марта", theme: "Имперское начало",
     items: [
       { time: "11:30", title: "Заезд в Hotel Ormaie", desc: "16-й округ. Оставляем вещи и начинаем праздник!", loc: "Hotel Ormaie Paris" },
-      { time: "14:30", title: "Гастро-прогулка (Rue du Bac)", desc: "Забираем шоколадную туфельку в Jean-Paul Hévin и создаем свой купаж чая.", loc: "Rue du Bac Paris" },
-      { time: "19:30", title: "Ужин в Terra (Маре)", desc: "Романтичный ужин. Обязательно закажите фирменное пюре!", loc: "Terra Restaurant Paris" }
+      { time: "14:30", title: "Гастро‑прогулка (Rue du Bac)", desc: "Забираем шоколадную туфельку в Jean‑Paul Hévin и создаём свой купаж чая.", loc: "Rue du Bac Paris" },
+      { time: "19:30", title: "Ужин в Terra (Марэ)", desc: "Романтичный ужин. Обязательно закажите фирменное пюре!", loc: "Terra Restaurant Paris" }
     ]
   },
   {
     day: "День 2", date: "20 марта", theme: "Высоты и история",
     items: [
-      { time: "10:30", title: "Триумфальная арка", desc: "Пешком от отеля (10 мин). Пользуйтесь подземным переходом.", loc: "Arc de Triomphe" },
-      { time: "12:30", title: "Эйфелева башня", desc: "Подъем на вершину. Ищите мозаику в приложении FlashInvaders!", loc: "Eiffel Tower" },
+      { time: "10:30", title: "Триумфальная арка", desc: "Пешком от отеля (10 минут). Пользуйтесь подземным переходом.", loc: "Arc de Triomphe" },
+      { time: "12:30", title: "Эйфелева башня", desc: "Подъём на вершину. Ищем мозаику в приложении FlashInvaders!", loc: "Eiffel Tower" },
       { time: "15:00", title: "Обед в Milagro", desc: "Французская классика в современном прочтении.", loc: "Milagro Paris" },
       { time: "16:30", title: "Дом Инвалидов", desc: "Золотой купол и гробница Наполеона.", loc: "Les Invalides" }
     ]
@@ -126,10 +249,17 @@ const ITIN = [
   {
     day: "День 3", date: "21 марта", theme: "Сердце Парижа",
     items: [
-      { time: "10:00", title: "Нотр-Дам", desc: "Нулевой километр — центр Франции.", loc: "Notre Dame Paris" },
-      { time: "12:30", title: "Обед в Miznon", desc: "Лучшая пита в Маре. Цветная капуста — маст-хэв!", loc: "Miznon Marais" },
-      { time: "14:30", title: "Лувр (Крыло Сюлли)", desc: "Смотрим фундаменты средневековой крепости — секрет без очередей.", loc: "Louvre Sully Wing" },
-      { time: "16:30", title: "Площадь Вогезов", desc: "Отдых в самом старом парке Парижа.", loc: "Place des Vosges" }
+      { time: "10:00", title: "Нотр‑Дам", desc: "Нулевой километр – центр Франции.", loc: "Notre Dame Paris" },
+      { time: "12:30", title: "Обед в Miznon", desc: "Лучшая пита в Марэ. Цветная капуста – must‑have!", loc: "Miznon Marais" },
+      { time: "14:30", title: "Лувр (крыло Сюлли)", desc: "Смотрим фундаменты средневековой крепости – тихий «секрет» без очередей.", loc: "Louvre Sully Wing" },
+      { time: "16:30", title: "Площадь Вогезов", desc: "Отдых в одном из самых красивых мест Парижа.", loc: "Place des Vosges" }
+    ]
+  },
+  {
+    day: "День 4", date: "22 марта", theme: "Нежный финал и выезд",
+    items: [
+      { time: "07:00", title: "Быстрый завтрак", desc: "Завтрак в отеле или свежие chouquettes в ближайшей булочной, которая открывается рано.", loc: "bakery near Hotel Ormaie Paris" },
+      { time: "07:30", title: "Официальное такси до CDG", desc: "Просим консьержа вызвать официальное такси по фиксированному тарифу. У входа не садимся к «частникам».", loc: "Paris taxi to CDG fixed fare" }
     ]
   }
 ];
@@ -139,7 +269,11 @@ function render() {
   container.innerHTML = ITIN.map((d, i) => `
     <details ${i === 0 ? 'open' : ''}>
       <summary class="day-header">
-        <div><span style="color:var(--accent); font-weight:bold">${d.day}</span> – ${d.theme}</div>
+        <div>
+          <div><span style="color:var(--accent); font-weight:bold">${d.day}</span> – ${d.theme}</div>
+          <div class="day-sub">${d.date}</div>
+        </div>
+        <div class="small">${d.items.length} остановки</div>
       </summary>
       <div class="card">
         ${d.items.map(it => `
@@ -147,20 +281,32 @@ function render() {
             <span class="time">${it.time}</span>
             <span class="title">${it.title}</span>
             <p class="details">${it.desc}</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.loc)}" target="_blank" class="btn">📍 На карту</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.loc)}" target="_blank" rel="noreferrer" class="btn">📍 На карту</a>
           </div>
         `).join('')}
       </div>
     </details>
   `).join('');
 }
+
 document.getElementById('search').addEventListener('input', (e) => {
-  const term = e.target.value.toLowerCase();
-  document.querySelectorAll('.item').forEach(el => {
-    el.style.display = el.innerText.toLowerCase().includes(term) ? 'block' : 'none';
+  const term = e.target.value.toLowerCase().trim();
+  const items = document.querySelectorAll('.item');
+
+  items.forEach(el => {
+    const txt = el.innerText.toLowerCase();
+    el.style.display = (!term || txt.includes(term)) ? 'block' : 'none';
+  });
+
+  // Скрываем дни, где все пункты скрыты
+  document.querySelectorAll('details').forEach(d => {
+    const visible = Array.from(d.querySelectorAll('.item')).some(x => x.style.display !== 'none');
+    d.style.display = visible ? 'block' : 'none';
   });
 });
+
 render();
 </script>
+
 </body>
 </html>
