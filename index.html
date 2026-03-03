@@ -108,7 +108,14 @@
       border-radius: 0 8px 8px 0;
     }
 
-    .time { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
+    .itemHeader{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .time { color: var(--accent); font-weight: 800; font-size: 0.95rem; }
+    .time.reservedTime{ background: rgba(212,175,55,0.18); padding: 3px 8px; border-radius: 999px; }
+
+    .badges{ display:inline-flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .badge{ display:inline-flex; align-items:center; gap:6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; border: 1px solid var(--border); background: white; color: var(--muted); white-space:nowrap; }
+    .badgeReserved{ border-color: rgba(27,111,106,0.35); background: rgba(27,111,106,0.10); color: #1b6f6a; font-weight: 700; }
+
     .title { font-weight: 700; font-size: 1.1rem; display: block; margin: 5px 0; }
     .details { font-size: 0.95rem; color: var(--muted); }
 
@@ -224,10 +231,10 @@ const ITIN = [
     items: [
       { time: "09:00 – 11:00", title: "Прилёт в CDG и официальное такси", desc: "Берём такси только на официальной стоянке. В аэропорту действует фиксированный тариф – избегаем «помощников» внутри терминала.", loc: "Paris CDG Taxi Stand" },
       { time: "11:00 – 12:00", title: "Заселение в Hotel Ormaie", desc: "Оставляем багаж. Сразу говорим «Bonjour» персоналу – во Франции это обязательная вежливость.", loc: "Hotel Ormaie Paris" },
-      { time: "12:00 – 13:30", title: "Праздничный обед в Le Paris Seize", desc: "Локальный ресторан рядом с отелем в 16-м округе.", loc: "Le Paris Seize Paris" },
+      { time: "12:00 – 13:30", title: "Праздничный обед в Le Paris Seize", desc: "Локальный ресторан рядом с отелем в 16-м округе.", loc: "Le Paris 16 Paris", reserved: true, reservedLabel: "Забронировано" },
       { time: "14:00 – 15:30", title: "Прогулка к Эйфелевой башне", desc: "Идём к Champ de Mars. На Pont d'Iéna игнорируем «наперсточников» и трюк с «золотым кольцом». Просто наслаждаемся видом.", loc: "Champ de Mars Paris" },
       { time: "16:00 – 18:30", title: "Rue du Bac и Saint‑Germain", desc: "Метро линия 6 от Boissière или такси. Шоколадный мусс в Patrice Chapon и чай в Conservatoire des Hémisphères.", loc: "Rue du Bac Paris" },
-      { time: "19:30", title: "Ужин в Les Parisiens", desc: "Идеально расположен для вечера в районе 7-го округа / Saint‑Germain.", loc: "Les Parisiens Paris" },
+      { time: "19:30", title: "Ужин в Les Parisiens", desc: "Идеально расположен для вечера в районе 7-го округа / Saint‑Germain.", loc: "Les Parisiens Restaurant Paris", reserved: true, reservedLabel: "Забронировано" },
       { time: "Поздний вечер", title: "Возвращение по линии 6", desc: "Метро линия 6 пересекает Сену над землёй – открывается подсвеченная Эйфелева башня.", loc: "Metro Line 6 Paris" }
     ]
   },
@@ -238,7 +245,7 @@ const ITIN = [
       { time: "12:30 – 14:30", title: "Эйфелева башня – подъём на вершину", desc: "Приходим заранее на контроль безопасности. Лифт предпочтителен с ребёнком.", loc: "Eiffel Tower" },
       { time: "14:45 – 16:00", title: "Лёгкий обед", desc: "Chouquettes в булочной или Bouillon рядом – быстро, аутентично и без формальностей.", loc: "Paris Bouillon" },
       { time: "16:15 – 17:45", title: "Дом Инвалидов – гробница Наполеона", desc: "Саркофаг находится прямо под золотым куполом. Впечатляет и взрослых, и детей.", loc: "Les Invalides" },
-      { time: "19:30", title: "Ужин в Milagro", desc: "Michelin‑referenced французско‑интернациональная кухня. Отличный шанс попробовать steak‑frites с chimichurri.", loc: "Milagro Paris" }
+      { time: "19:00", title: "Ужин в Milagro", desc: "Michelin‑referenced французско‑интернациональная кухня. Отличный шанс попробовать steak‑frites с chimichurri.", loc: "Milagro Paris", reserved: true, reservedLabel: "Забронировано" }
     ]
   },
   {
@@ -246,7 +253,7 @@ const ITIN = [
     items: [
       { time: "10:00 – 11:30", title: "Нотр‑Дам", desc: "Очередь обычно движется быстро. Ищем Kilomètre Zéro – географический центр Франции.", loc: "Notre Dame Paris" },
       { time: "11:45 – 12:15", title: "Прогулка у Лувра", desc: "Cour Napoléon и стеклянная пирамида. В крыле Sully – средневековые фундаменты без толпы.", loc: "Louvre Pyramid" },
-      { time: "12:30 – 14:00", title: "Обед в La Jacobine", desc: "Исторический passage в 6-м округе.", loc: "La Jacobine Paris" },
+      { time: "12:30 – 14:00", title: "Обед в La Jacobine", desc: "Исторический passage в 6-м округе.", loc: "La Jacobine Paris", reserved: true, reservedLabel: "Забронировано" },
       { time: "14:30 – 16:30", title: "Маре", desc: "Узкие улицы и старейшая архитектура Парижа.", loc: "Le Marais Paris" },
       { time: "16:30 – 18:00", title: "Place des Vosges", desc: "Самая старая плановая площадь Парижа. Детская площадка на южной стороне.", loc: "Place des Vosges" },
       { time: "Вечер", title: "Финальный ужин в Маре", desc: "Miznon – отличная high‑end pita fusion, если хочется менее формально.", loc: "Miznon Marais" }
@@ -274,7 +281,10 @@ function render() {
       <div class="card">
         ${d.items.map(it => `
           <div class="item">
-            <span class="time">${it.time}</span>
+            <div class="itemHeader">
+              <span class="time ${it.reserved ? 'reservedTime' : ''}">${it.time}</span>
+              <span class="badges">${it.reserved ? `<span class=\"badge badgeReserved\">✅ ${it.reservedLabel || 'Забронировано'}</span>` : ''}</span>
+            </div>
             <span class="title">${it.title}</span>
             <p class="details">${it.desc}</p>
             <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.loc)}" target="_blank" rel="noreferrer" class="btn">📍 На карту</a>
