@@ -1,196 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyeux Anniversaire - Our Paris Trip</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --paris-gold: #D4AF37;
-            --paris-cream: #FDF5E6;
-            --paris-blue: #2C3E50;
-            --paris-pink: #FADADD;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--paris-cream);
-            color: var(--paris-blue);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 3px double var(--paris-gold);
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin: 0;
-            color: var(--paris-gold);
-        }
-        .subtitle {
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-        }
-        .tab-container {
-            display: flex;
-            overflow-x: auto;
-            background: var(--paris-blue);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .tab {
-            flex: 1;
-            padding: 15px;
-            text-align: center;
-            color: white;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            border-bottom: 3px solid transparent;
-        }
-        .tab.active {
-            border-bottom: 3px solid var(--paris-gold);
-            font-weight: bold;
-        }
-        .content {
-            padding: 20px;
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-        .content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--paris-gold);
-        }
-        .time {
-            font-weight: bold;
-            color: var(--paris-gold);
-            display: block;
-            margin-bottom: 5px;
-        }
-        .location-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin: 0 0 10px 0;
-        }
-        .tip {
-            background: var(--paris-pink);
-            padding: 10px;
-            font-size: 0.9rem;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: var(--paris-gold);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>С днем рождения! Наше парижское приключение ❤️</title>
+  <style>
+    :root{
+      /* Парижская палитра люкс */
+      --bg:#FDF5E6;          /* теплый кремовый/пергамент */
+      --card:#ffffff;
+      --text:#2C3E50;        /* глубокий темно-синий */
+      --muted:#7F8C8D;
+      --accent:#D4AF37;      /* классическое золото */
+      --pink:#FADADD;        /* нежно-розовый макарун */
+      --border: rgba(212, 175, 55, 0.3);
+      --shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+      --radius: 12px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+      background: var(--bg);
+      background-image: radial-gradient(var(--border) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .birthday-pill {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 2px solid var(--accent);
+      border-radius: 50px;
+      font-weight: bold;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 15px;
+      background: white;
+    }
+
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      margin: 10px 0;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      gap: 20px;
+    }
+
+    @media (min-width: 800px) {
+      .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    .day-header {
+      cursor: pointer;
+      padding: 15px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .day-header:hover { border-color: var(--accent); }
+
+    .item {
+      border-left: 3px solid var(--accent);
+      padding: 15px;
+      margin: 15px 0;
+      background: #fffcf9;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .time { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
+    .title { font-weight: 700; font-size: 1.1rem; display: block; margin: 5px 0; }
+    .details { font-size: 0.95rem; color: var(--muted); }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: white;
+      border: 1px solid var(--accent);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 10px;
+      transition: 0.2s;
+    }
+
+    .btn:hover { background: var(--accent); color: white; }
+
+    .etiquette-note {
+      background: var(--pink);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      border-left: 4px solid #e1a7b1;
+    }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0; border-bottom: 1px dotted var(--border); font-size: 0.9rem; }
+
+    #search {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      outline-color: var(--accent);
+      font-size: 16px;
+    }
+
+    .paris-symbol { font-size: 24px; margin-bottom: 10px; }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Joyeux Anniversaire</h1>
-    <p class="subtitle">March 19 - 22, 2026</p>
+  <div class="birthday-pill">Joyeux Anniversaire</div>
+  <h1>Париж для тебя ❤️</h1>
+  <p style="font-style: italic; color: var(--muted)">19 – 22 марта 2026</p>
 </header>
 
-<div class="tab-container">
-    <div class="tab active" onclick="showDay(1)">Day 1</div>
-    <div class="tab" onclick="showDay(2)">Day 2</div>
-    <div class="tab" onclick="showDay(3)">Day 3</div>
-    <div class="tab" onclick="showDay(4)">Day 4</div>
-</div>
+<main>
+  <div class="grid">
+    <section>
+      <input type="search" id="search" placeholder="Поиск по плану (например, 'Ужин')...">
+      
+      <div id="itinerary-container"></div>
+    </section>
 
-<div id="day1" class="content active">
-    <div class="card">
-        <span class="time">11:30 AM</span>
-        <h2 class="location-title">Arrival at Hotel Ormaie</h2>
-        <p>Drop bags in the 16th Arrondissement. Remember: A friendly "Bonjour" is the magic key to Paris!</p>
-    </div>
-    <div class="card">
-        <span class="time">02:30 PM</span>
-        <h2 class="location-title">Gastro-Stroll: Rue du Bac</h2>
-        <p><strong>Jean-Paul Hévin:</strong> Picking up your "Zinderella" chocolate shoe gift.</p>
-        <p><strong>Conservatoire des Hémisphères:</strong> Crafting your own signature tea blend.</p>
-    </div>
-    <div class="card">
-        <span class="time">07:30 PM</span>
-        <h2 class="location-title">Birthday Dinner: Terra</h2>
-        <p>Romantic shared plates in the Marais. Don't forget to ask for the bill (l'addition)!</p>
-        <div class="tip">Must try: The Faux-filet & potato purée.</div>
-    </div>
-</div>
+    <aside>
+      <div class="card">
+        <div class="paris-symbol">🇫🇷</div>
+        <h3 style="margin-top:0">Правило «Bonjour»</h3>
+        <p class="etiquette-note">
+          Главный секрет Парижа: всегда говорите <strong>«Bonjour»</strong> (Бонжур), когда заходите в отель, магазин или ресторан. Это маленькое слово творит чудеса с уровнем сервиса!
+        </p>
+      </div>
 
-<div id="day2" class="content">
-    <div class="card">
-        <span class="time">10:30 AM</span>
-        <h2 class="location-title">Arc de Triomphe</h2>
-        <p>A stroll from the hotel to the iconic arch. Use the tunnel to reach the base!</p>
-    </div>
-    <div class="card">
-        <span class="time">12:30 PM</span>
-        <h2 class="location-title">Eiffel Tower Summit</h2>
-        <p>Views from the clouds. Look for the "FlashInvaders" mosaic at the top!</p>
-    </div>
-    <div class="card">
-        <span class="time">04:30 PM</span>
-        <h2 class="location-title">Les Invalides</h2>
-        <p>Visiting the golden dome and the Tomb of Napoleon.</p>
-    </div>
-</div>
-
-<div id="day3" class="content">
-    <div class="card">
-        <span class="time">10:00 AM</span>
-        <h2 class="location-title">Notre Dame & Kilometer Zero</h2>
-        <p>Stand at the geometric heart of France in the newly reopened cathedral square.</p>
-    </div>
-    <div class="card">
-        <span class="time">02:30 PM</span>
-        <h2 class="location-title">The Louvre: Hidden Sully Wing</h2>
-        <p>Viewing the medieval fortress foundations—the secret roots of the palace.</p>
-    </div>
-    <div class="card">
-        <span class="time">04:30 PM</span>
-        <h2 class="location-title">Place des Vosges</h2>
-        <p>The most beautiful square in Paris. Relax while the little one plays in the park.</p>
-    </div>
-</div>
-
-<div id="day4" class="content">
-    <div class="card">
-        <span class="time">07:30 AM</span>
-        <h2 class="location-title">Au Revoir, Paris</h2>
-        <p>Official taxi to CDG. Au revoir for now, but the memories stay forever.</p>
-    </div>
-</div>
-
-<footer>
-    <p>"Paris is always a good idea." — Audrey Hepburn</p>
-</footer>
+      <div class="card">
+        <div class="paris-symbol">🥐</div>
+        <h3>Важные мелочи</h3>
+        <ul class="checklist">
+          <li>✅ Билеты на Эйфелеву башню (в телефоне)</li>
+          <li>✅ Удобная обувь для прогулок</li>
+          <li>✅ Нарядный образ для ужина в Terra</li>
+          <li>✅ FlashInvaders для ребенка</li>
+          <li>✅ Powerbank и зарядка</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
 
 <script>
-    function showDay(dayNumber) {
-        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('day' + dayNumber).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
+const ITIN = [
+  {
+    day: "День 1",
+    date: "19 марта",
+    theme: "День Рождения в Париже",
+    items: [
+      { time: "11:30", title: "Заезд в Hotel Ormaie", desc: "Оставляем вещи в 16-м округе. Помним про «Bonjour»!", loc: "Hotel Ormaie Paris" },
+      { time: "14:30", title: "Гастро-прогулка по Rue du Bac", desc: "Забираем подарок: шоколадную туфельку в Jean-Paul Hévin и уникальный чай в Conservatoire des Hémisphères.", loc: "Rue du Bac Paris" },
+      { time: "19:30", title: "Праздничный ужин: Terra", desc: "Уютный ресторан в квартале Марэ. Рекомендую стейк с их легендарным пюре!", loc: "Terra Restaurant Paris" }
+    ]
+  },
+  {
+    day: "День 2",
+    date: "20 марта",
+    theme: "Высоты и Наполеон",
+    items: [
+      { time: "10:30", title: "Триумфальная арка", desc: "Прогулка от отеля. Используем подземный переход, чтобы подойти к подножию.", loc: "Arc de Triomphe" },
+      { time: "12:30", title: "Вершина Эйфелевой башни", desc: "Ищем мозаику «пришелец в облаках» через приложение FlashInvaders.", loc: "Eiffel Tower" },
+      { time: "15:00", title: "Обед в Milagro", desc: "Классика французской кухни с международным акцентом.", loc: "Milagro Paris" },
+      { time: "16:30", title: "Гробница Наполеона", desc: "Посещение Дома Инвалидов под золотым куполом.", loc: "Les Invalides" }
+    ]
+  },
+  {
+    day: "День 3",
+    date: "21 марта",
+    theme: "Сердце города",
+    items: [
+      { time: "10:00", title: "Нотр-Дам", desc: "Постоим на «Нулевом километре» — географическом центре Франции.", loc: "Notre Dame Paris" },
+      { time: "12:30", title: "Обед в Miznon", desc: "Премиальная пита. Обязательно попробуйте запеченную цветную капусту!", loc: "Miznon Marais" },
+      { time: "14:30", title: "Лувр: Крыло Сюлли", desc: "Смотрим на древние средневековые фундаменты крепости — секретное место без толп.", loc: "Louvre Sully Wing" },
+      { time: "16:30", title: "Площадь Вогезов", desc: "Отдых в самом красивом парке Парижа, пока ребенок играет на площадке.", loc: "Place des Vosges" }
+    ]
+  },
+  {
+    day: "День 4",
+    date: "22 марта",
+    theme: "До скорого, Париж!",
+    items: [
+      { time: "07:30", title: "Такси в аэропорт CDG", desc: "Только официальное такси с фиксированным тарифом.", loc: "CDG Airport" }
+    ]
+  }
+];
+
+function render() {
+  const container = document.getElementById('itinerary-container');
+  container.innerHTML = ITIN.map((d, i) => `
+    <details ${i === 0 ? 'open' : ''} class="day-section">
+      <summary class="day-header">
+        <div>
+          <span style="color:var(--accent); font-weight:bold">${d.day}</span> – ${d.theme}
+          <div style="font-size:0.8rem; color:var(--muted)">${d.date}</div>
+        </div>
+      </summary>
+      <div class="card">
+        ${d.items.map(it => `
+          <div class="item">
+            <span class="time">${it.time}</span>
+            <span class="title">${it.title}</span>
+            <p class="details">${it.desc}</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.loc)}" target="_blank" class="btn">📍 На карту</a>
+          </div>
+        `).join('')}
+      </div>
+    </details>
+  `).join('');
+}
+
+document.getElementById('search').addEventListener('input', (e) => {
+  const term = e.target.value.toLowerCase();
+  document.querySelectorAll('.item').forEach(el => {
+    const text = el.innerText.toLowerCase();
+    el.style.display = text.includes(term) ? 'block' : 'none';
+  });
+});
+
+render();
 </script>
 
 </body>
