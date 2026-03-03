@@ -3,16 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>С днем рождения! Наше парижское приключение ❤️</title>
+  <title>С днем рождения! Наш Париж 2026 ❤️</title>
   <style>
     :root{
-      /* Парижская палитра люкс */
-      --bg:#FDF5E6;          /* теплый кремовый/пергамент */
+      --bg:#FDF5E6;          /* кремовый пергамент */
       --card:#ffffff;
-      --text:#2C3E50;        /* глубокий темно-синий */
+      --text:#2C3E50;        /* глубокий синий */
       --muted:#7F8C8D;
-      --accent:#D4AF37;      /* классическое золото */
-      --pink:#FADADD;        /* нежно-розовый макарун */
+      --accent:#D4AF37;      /* золото */
+      --pink:#FADADD;        /* розовый макарун */
       --border: rgba(212, 175, 55, 0.3);
       --shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
       --radius: 12px;
@@ -27,156 +26,78 @@
       background-image: radial-gradient(var(--border) 1px, transparent 1px);
       background-size: 20px 20px;
     }
-
-    header {
-      padding: 40px 20px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
+    header { padding: 40px 20px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
     .birthday-pill {
-      display: inline-block;
-      padding: 8px 20px;
-      border: 2px solid var(--accent);
-      border-radius: 50px;
-      font-weight: bold;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      margin-bottom: 15px;
-      background: white;
+      display: inline-block; padding: 8px 20px; border: 2px solid var(--accent);
+      border-radius: 50px; font-weight: bold; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+      margin-bottom: 15px; background: white;
     }
-
-    h1 {
-      font-family: 'Georgia', serif;
-      font-size: clamp(28px, 5vw, 42px);
-      margin: 10px 0;
-      color: var(--text);
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      display: grid;
-      gap: 20px;
-    }
-
-    @media (min-width: 800px) {
-      .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 25px;
-      margin-bottom: 20px;
-    }
-
+    h1 { font-family: 'Georgia', serif; font-size: clamp(28px, 5vw, 42px); margin: 10px 0; }
+    main { max-width: 900px; margin: 0 auto; padding: 20px; display: grid; gap: 20px; }
+    @media (min-width: 800px) { .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 25px; margin-bottom: 20px; }
     .day-header {
-      cursor: pointer;
-      padding: 15px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
+      cursor: pointer; padding: 15px; background: white; border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 10px; display: flex;
+      justify-content: space-between; align-items: center;
     }
-
-    .day-header:hover { border-color: var(--accent); }
-
-    .item {
-      border-left: 3px solid var(--accent);
-      padding: 15px;
-      margin: 15px 0;
-      background: #fffcf9;
-      border-radius: 0 8px 8px 0;
-    }
-
+    .item { border-left: 3px solid var(--accent); padding: 15px; margin: 15px 0; background: #fffcf9; border-radius: 0 8px 8px 0; }
     .time { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
     .title { font-weight: 700; font-size: 1.1rem; display: block; margin: 5px 0; }
     .details { font-size: 0.95rem; color: var(--muted); }
-
     .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      background: white;
-      border: 1px solid var(--accent);
-      color: var(--text);
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 13px;
-      margin-top: 10px;
-      transition: 0.2s;
+      display: inline-block; padding: 10px 18px; background: white; border: 1px solid var(--accent);
+      color: var(--text); text-decoration: none; border-radius: 8px; font-size: 13px; margin-top: 10px;
     }
-
     .btn:hover { background: var(--accent); color: white; }
-
-    .etiquette-note {
-      background: var(--pink);
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      border-left: 4px solid #e1a7b1;
-    }
-
+    .note-box { background: var(--pink); padding: 15px; border-radius: 8px; font-size: 0.9rem; border-left: 4px solid #e1a7b1; margin-top: 10px; }
+    .transport-box { background: #e0f2f1; padding: 15px; border-radius: 8px; font-size: 0.9rem; border-left: 4px solid #1b6f6a; margin-top: 10px; }
     .checklist { list-style: none; padding: 0; }
     .checklist li { padding: 8px 0; border-bottom: 1px dotted var(--border); font-size: 0.9rem; }
-
-    #search {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      margin-bottom: 20px;
-      outline-color: var(--accent);
-      font-size: 16px;
-    }
-
-    .paris-symbol { font-size: 24px; margin-bottom: 10px; }
+    #search { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; font-size: 16px; }
   </style>
 </head>
 <body>
 
 <header>
   <div class="birthday-pill">Joyeux Anniversaire</div>
-  <h1>Париж для тебя ❤️</h1>
+  <h1>Париж: Твой День Рождения ❤️</h1>
   <p style="font-style: italic; color: var(--muted)">19 – 22 марта 2026</p>
 </header>
 
 <main>
   <div class="grid">
     <section>
-      <input type="search" id="search" placeholder="Поиск по плану (например, 'Ужин')...">
-      
+      <input type="search" id="search" placeholder="Найти (например, 'ужин' или 'Эйфель')...">
       <div id="itinerary-container"></div>
     </section>
 
     <aside>
       <div class="card">
-        <div class="paris-symbol">🇫🇷</div>
-        <h3 style="margin-top:0">Правило «Bonjour»</h3>
-        <p class="etiquette-note">
-          Главный секрет Парижа: всегда говорите <strong>«Bonjour»</strong> (Бонжур), когда заходите в отель, магазин или ресторан. Это маленькое слово творит чудеса с уровнем сервиса!
+        <h3 style="margin-top:0">🗼 Секрет сервиса</h3>
+        <p class="note-box">
+          Первое правило Парижа: всегда говорите <strong>«Bonjour»</strong> при входе. Это кардинально меняет отношение персонала в лучшую сторону!
         </p>
       </div>
 
       <div class="card">
-        <div class="paris-symbol">🥐</div>
-        <h3>Важные мелочи</h3>
+        <h3>🚕 Транспорт и логистика</h3>
+        <p class="transport-box">
+          <strong>Такси:</strong> Пользуйтесь официальными такси. До аэропорта CDG действует <strong>фиксированный тариф</strong>. Убедитесь, что водитель принимает карты.
+        </p>
+        <p class="transport-box">
+          <strong>Метро:</strong> Линия 6 — самая красивая (она наземная и проходит мимо Эйфелевой башни).
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎁 Чек-лист поездки</h3>
         <ul class="checklist">
-          <li>✅ Билеты на Эйфелеву башню (в телефоне)</li>
-          <li>✅ Удобная обувь для прогулок</li>
-          <li>✅ Нарядный образ для ужина в Terra</li>
-          <li>✅ FlashInvaders для ребенка</li>
-          <li>✅ Powerbank и зарядка</li>
+          <li>✅ Шоколадная туфелька (забрать в День 1)</li>
+          <li>✅ Приложение FlashInvaders для игр в очереди</li>
+          <li>✅ Бронь в Terra (не забудьте попросить счет в конце)</li>
+          <li>✅ Удобная обувь (много пеших прогулок)</li>
         </ul>
       </div>
     </aside>
@@ -186,43 +107,29 @@
 <script>
 const ITIN = [
   {
-    day: "День 1",
-    date: "19 марта",
-    theme: "День Рождения в Париже",
+    day: "День 1", date: "19 марта", theme: "Имперское начало",
     items: [
-      { time: "11:30", title: "Заезд в Hotel Ormaie", desc: "Оставляем вещи в 16-м округе. Помним про «Bonjour»!", loc: "Hotel Ormaie Paris" },
-      { time: "14:30", title: "Гастро-прогулка по Rue du Bac", desc: "Забираем подарок: шоколадную туфельку в Jean-Paul Hévin и уникальный чай в Conservatoire des Hémisphères.", loc: "Rue du Bac Paris" },
-      { time: "19:30", title: "Праздничный ужин: Terra", desc: "Уютный ресторан в квартале Марэ. Рекомендую стейк с их легендарным пюре!", loc: "Terra Restaurant Paris" }
+      { time: "11:30", title: "Заезд в Hotel Ormaie", desc: "16-й округ. Оставляем вещи и начинаем праздник!", loc: "Hotel Ormaie Paris" },
+      { time: "14:30", title: "Гастро-прогулка (Rue du Bac)", desc: "Забираем шоколадную туфельку в Jean-Paul Hévin и создаем свой купаж чая.", loc: "Rue du Bac Paris" },
+      { time: "19:30", title: "Ужин в Terra (Маре)", desc: "Романтичный ужин. Обязательно закажите фирменное пюре!", loc: "Terra Restaurant Paris" }
     ]
   },
   {
-    day: "День 2",
-    date: "20 марта",
-    theme: "Высоты и Наполеон",
+    day: "День 2", date: "20 марта", theme: "Высоты и история",
     items: [
-      { time: "10:30", title: "Триумфальная арка", desc: "Прогулка от отеля. Используем подземный переход, чтобы подойти к подножию.", loc: "Arc de Triomphe" },
-      { time: "12:30", title: "Вершина Эйфелевой башни", desc: "Ищем мозаику «пришелец в облаках» через приложение FlashInvaders.", loc: "Eiffel Tower" },
-      { time: "15:00", title: "Обед в Milagro", desc: "Классика французской кухни с международным акцентом.", loc: "Milagro Paris" },
-      { time: "16:30", title: "Гробница Наполеона", desc: "Посещение Дома Инвалидов под золотым куполом.", loc: "Les Invalides" }
+      { time: "10:30", title: "Триумфальная арка", desc: "Пешком от отеля (10 мин). Пользуйтесь подземным переходом.", loc: "Arc de Triomphe" },
+      { time: "12:30", title: "Эйфелева башня", desc: "Подъем на вершину. Ищите мозаику в приложении FlashInvaders!", loc: "Eiffel Tower" },
+      { time: "15:00", title: "Обед в Milagro", desc: "Французская классика в современном прочтении.", loc: "Milagro Paris" },
+      { time: "16:30", title: "Дом Инвалидов", desc: "Золотой купол и гробница Наполеона.", loc: "Les Invalides" }
     ]
   },
   {
-    day: "День 3",
-    date: "21 марта",
-    theme: "Сердце города",
+    day: "День 3", date: "21 марта", theme: "Сердце Парижа",
     items: [
-      { time: "10:00", title: "Нотр-Дам", desc: "Постоим на «Нулевом километре» — географическом центре Франции.", loc: "Notre Dame Paris" },
-      { time: "12:30", title: "Обед в Miznon", desc: "Премиальная пита. Обязательно попробуйте запеченную цветную капусту!", loc: "Miznon Marais" },
-      { time: "14:30", title: "Лувр: Крыло Сюлли", desc: "Смотрим на древние средневековые фундаменты крепости — секретное место без толп.", loc: "Louvre Sully Wing" },
-      { time: "16:30", title: "Площадь Вогезов", desc: "Отдых в самом красивом парке Парижа, пока ребенок играет на площадке.", loc: "Place des Vosges" }
-    ]
-  },
-  {
-    day: "День 4",
-    date: "22 марта",
-    theme: "До скорого, Париж!",
-    items: [
-      { time: "07:30", title: "Такси в аэропорт CDG", desc: "Только официальное такси с фиксированным тарифом.", loc: "CDG Airport" }
+      { time: "10:00", title: "Нотр-Дам", desc: "Нулевой километр — центр Франции.", loc: "Notre Dame Paris" },
+      { time: "12:30", title: "Обед в Miznon", desc: "Лучшая пита в Маре. Цветная капуста — маст-хэв!", loc: "Miznon Marais" },
+      { time: "14:30", title: "Лувр (Крыло Сюлли)", desc: "Смотрим фундаменты средневековой крепости — секрет без очередей.", loc: "Louvre Sully Wing" },
+      { time: "16:30", title: "Площадь Вогезов", desc: "Отдых в самом старом парке Парижа.", loc: "Place des Vosges" }
     ]
   }
 ];
@@ -230,12 +137,9 @@ const ITIN = [
 function render() {
   const container = document.getElementById('itinerary-container');
   container.innerHTML = ITIN.map((d, i) => `
-    <details ${i === 0 ? 'open' : ''} class="day-section">
+    <details ${i === 0 ? 'open' : ''}>
       <summary class="day-header">
-        <div>
-          <span style="color:var(--accent); font-weight:bold">${d.day}</span> – ${d.theme}
-          <div style="font-size:0.8rem; color:var(--muted)">${d.date}</div>
-        </div>
+        <div><span style="color:var(--accent); font-weight:bold">${d.day}</span> – ${d.theme}</div>
       </summary>
       <div class="card">
         ${d.items.map(it => `
@@ -250,17 +154,13 @@ function render() {
     </details>
   `).join('');
 }
-
 document.getElementById('search').addEventListener('input', (e) => {
   const term = e.target.value.toLowerCase();
   document.querySelectorAll('.item').forEach(el => {
-    const text = el.innerText.toLowerCase();
-    el.style.display = text.includes(term) ? 'block' : 'none';
+    el.style.display = el.innerText.toLowerCase().includes(term) ? 'block' : 'none';
   });
 });
-
 render();
 </script>
-
 </body>
 </html>
